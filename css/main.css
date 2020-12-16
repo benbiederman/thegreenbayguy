@@ -1,0 +1,808 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #E8EDDC;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald", "Helvetica", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: "Roboto", "Helvetica", sans-serif;
+    font-weight: 300;
+}
+
+
+/* Mobile */
+@media only screen and (min-width: 100px) {
+
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1.25rem;
+    }
+
+    .primary-text a:hover {
+        color:#18A360
+    }
+
+
+    /* Buttons - Mobile */
+    .btn-black {
+        min-width: 60vw;
+        background-color: #111;
+        margin: 0 auto;
+        min-height: 6vh;
+        border-radius: 10px;
+        border: 1px solid #111;
+        transition: all 0.5s ease;
+        font-family: "Oswald", "Helvetica", sans-serif;
+        color: #fcfcfc;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    .btn-black:hover {
+        background-color: #000000;
+        transform: scale(1.03);
+        color: #18A360
+    }
+
+    .btn-primary {
+        min-width: 60vw;
+        background-color: #18A360;
+        margin: 0 auto;
+        min-height: 6vh;
+        border-radius: 10px;
+        border: 1px solid #18A360;
+        transition: all 0.5s ease;
+        font-family: "Oswald", "Helvetica", sans-serif;
+        color: #fcfcfc;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin: 1rem 0;
+    }
+
+    .btn-primary:hover {
+        background-color: #00480F;
+        transform: scale(1.03);
+    }
+
+    /* Sections - Mobile*/
+    .landing-page {
+        background-position: top;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .section {
+        min-height: 88vh;
+        text-align: center;
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .section-alt {
+        min-height: 88vh;
+        text-align: center;
+        padding: 2rem 0;
+        background-color: #000000;
+        color: #fcfcfc;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .section-alt a {
+        text-decoration: none;
+        color: #fcfcfc;
+    }
+
+    /* Line - Mobile */
+    .line-1 {
+        width: 70%;
+        margin: 2rem auto;
+        background-color: #595959;
+        height: 2px;
+    }
+
+    
+
+    /* Navigation - Mobile */
+    .header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        min-height: 12vh;
+        transition: all 0.5s ease;
+        position: sticky;
+        top: 0;
+        z-index: 500;
+    }
+
+    .header-blk {
+        background-color: #000000;
+    }
+
+    .header-active {
+        background-color: #000000;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1rem;
+    }
+
+    .logo img {
+        height: 11.75vh;
+        padding: 0 .5rem;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 12vh;
+        left: -100%;
+        width: 100%;
+        min-height: 88vh;
+        background-color: #111;
+        z-index: 2;
+    }
+
+    .nav-list-active {
+        left: 0;
+    }
+
+    .nav-list ul {
+        list-style: none;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+    }
+
+    .nav-list li {
+        opacity: 0;
+    }
+
+    .nav-list a {
+        color: #fcfcfc;
+        font-family: "Oswald", "Helvetica", sans-serif;
+        font-size: 2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0 2rem;
+        transition: all 0.5s ease;
+    }
+
+    .nav-list a:hover {
+        color: #18A360;
+    }
+
+    .menu-btn {
+        min-height: 12vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+    
+    .menu-btn p {
+        color: #fcfcfc;
+        font-family: "Oswald", "Helvetica", sans-serif;
+        font-size: 2rem;
+        padding: 0 1rem;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    .socials {
+        display: none;
+        min-width: 20vw;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .socials img {
+        width: 3rem;
+        object-fit: contain;
+        padding: .5rem .2rem 0 .2rem;
+        transition: all 0.5s ease;
+    }
+
+    .socials img:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+
+    }
+
+    /* Landing Page - Mobile */
+    .home-landing {
+        height: 92vh;
+        background-image: url(/img/lambeau-game.jpg);
+        margin-top: -12.5vh;
+    }
+
+    .home-landing h2 {
+        color: #fcfcfc;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 10px #000000;
+    }
+
+    .home-landing p {
+        font-size: 1.5rem;
+        color: #fcfcfc;
+        padding: 0 .5rem 4rem .5rem;
+        text-shadow: 2px 2px 5px #000000;
+        font-weight: 300 ;
+    }
+
+    /* Misc. Guides - Mobile */
+    .text-break {
+        display: block;
+    }
+
+    .lg {
+        width: 95vw;
+        margin: 1.5rem auto;
+        background-color: #fcfcfc;;
+        box-shadow: 2px 2px 10px #c6c6c6;
+        transition: all 0.5s ease;
+    }
+
+    .lg:hover {
+        transform: scale(1.03);
+        box-shadow: 2px 2px 10px #595959;
+    }
+
+    .lg:hover p {
+        color: #18A360;
+    }
+
+    .lg img {
+        width: 95%;
+        object-fit: cover;
+        padding: .5rem 0;
+    }
+
+    .lg h2 {
+        padding-bottom: .5rem;
+        font-size: 1.5rem;
+    }
+
+    .lg p {
+        padding-bottom: .5rem;
+    }
+
+    .lg a {
+        text-decoration: none;
+        color: #111;
+    }
+
+    /* Help Secton - Mobile */
+    .sect-help {
+        padding: 2rem 2rem;
+        min-height: 80vh;
+    }
+
+    .sect-help h2 {
+        color: #18A360;
+    }
+
+    /* About Me - Mobile */
+    .about-me-container h2 {
+        margin: 1.5rem 0rem;
+    }
+
+    .about-me-container p {
+        margin: 1.5rem 0rem;
+        padding: 0 2rem;
+    }
+
+    .about-me-img img {
+        width: 90%;
+        margin: 0 auto;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .about-me-bio .socials {
+        display: flex;
+    }
+
+    /* Local's Guide - Mobile */
+    .lg-options {
+        min-height: 88vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+    }
+
+    .lg-option {
+        min-height: 21vh;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .lg-option:hover a {
+        color: #18A360;
+    }
+
+    .lg-option a {
+        color: #fcfcfc;
+        display: flex;
+        width: 100vw;
+        text-align: center;
+        height: 21vh;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        font-size: 3rem;
+    }
+
+    .lg-eat {
+        background-image: url(/img/Locals-Guide/Eat/eat-background.jpg);
+    }
+
+    .lg-drink {
+        background-image: url(/img/Locals-Guide/Drink/drink-background.jpg);
+    }
+
+    .lg-see {
+        background-image: url(/img/Locals-Guide/See/see-background.jpg);
+    }
+
+    .lg-misc {
+        background-image: url(/img/Locals-Guide/Misc/misc-background.jpg);
+    }
+
+    /* Footer - Mobile */
+    footer {
+        min-height: 20vh;
+        background-color: #000000;
+        width: 100%;
+        color: #fcfcfc;
+        text-align: center;
+    }
+
+    footer section h2 {
+        padding: .5rem 0;
+    }
+
+    footer .socials {
+        display: flex;
+    }
+
+    footer section p {
+        font-size: 1rem;
+        margin-top: 2rem;
+        padding-bottom: .5rem;
+    }
+
+    footer nav {
+        display: none;
+    }
+}
+
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    h4 {
+        font-size: 2rem
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    /* Buttons - Tablet */
+    .btn-black {
+        min-width: 50vw;
+        font-size: 1.5rem;
+    }
+
+
+    .btn-primary {
+        min-width: 50vw;
+        font-size: 1.5rem;
+    }
+
+    /* Sections - Tablet */
+    .section {
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    /* Line - Tablet */
+    .line-1 {
+        width: 50%;
+    }
+
+    /* Navigation - Tablet */
+    .logo {
+        margin-left: 5rem;
+    }
+
+    .nav-list ul {
+        text-align: center;
+    }
+
+    .menu-btn {
+        margin-right: 5rem;
+    }
+
+    /* Landing Page - Tablet */
+    .home-landing p {
+        font-size: 2rem;
+        padding: 0 2rem 4rem 2rem;
+    }
+
+
+    /* Misc Guides - Tablet */
+    
+    .text-break {
+        display: inline-block;
+    }
+
+    .lg-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
+
+
+    .lg {
+        width: 45%;
+    }
+
+    /* Help Secton - Tablet */
+    .sect-help {
+        padding: 2rem 4rem;
+    }
+
+    .sect-help p {
+        font-size: 1.5rem;
+    }
+
+    /* About Me - Tablet */
+
+    .about-me-container p {
+        margin: 1.5rem 0rem;
+        padding: 0 2rem;
+    }
+
+    .about-me-img img {
+        width: 70%;
+    }
+
+    /* Local's Guide - Tablet */
+    .lg-option a {
+        font-size: 4rem;
+    }
+
+    /* Footer - Tablet */
+    footer {
+        min-height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    footer nav {
+        display: inline;
+    }
+
+    .footer-menu {
+        width: 25%;
+        margin-left: 10%;
+    }
+
+    .footer-menu ul {
+        list-style: none;
+        text-align: left;
+        font-family: "Oswald", "Helvetica", sans-serif;
+        font-size: 1.5rem;
+    }
+
+    .footer-menu a {
+        width: auto;
+        color: #fcfcfc;
+        transition: all 0.5s ease; 
+    }
+
+    .footer-menu a:hover {
+        color: #18A360;
+    }
+
+    .footer-socials {
+        width: 35%;
+    }
+
+    footer section h2 {
+        padding: .5rem 0;
+    }
+
+    footer .socials {
+        display: flex;
+    }
+
+    footer section p {
+        font-size: 1rem;
+    }
+
+    
+
+
+
+
+
+
+    
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2.0rem;
+    }
+
+    h4 {
+        font-size: 1.5rem
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    /* Buttons - Desktop */
+    .btn-black {
+        min-width: 25vw;
+        font-size: 1.5rem;
+    }
+
+    .btn-primary {
+        min-width: 25vw;
+        font-size: 1.5rem;
+    }
+
+
+    .btn-small {
+        min-width: 15vw;
+        margin: 0 1rem;
+    }
+
+    /* Line - Desktop */
+    .line-1 {
+        width: 30%;
+    }
+
+
+    /* Navigation - Desktop */
+    .header {
+        min-height: 10vh;
+        
+    }
+
+    .logo {
+        margin-left: 5rem;
+        width: 20vw;
+    }
+
+    .logo img {
+        height: 9.5vh;
+        padding: 0 .5rem;
+    }
+
+    .socials {
+        display: flex;
+    }
+
+    .socials img {
+        width: 2rem;
+    }
+
+    .socials img:hover {
+        transform: scale(1.1);
+    }
+
+    .nav-list {
+        position: static;
+        width: 40vw;
+        margin-right: 5rem;
+        min-height: 10vh;
+        background-color: transparent;
+    }
+
+    .nav-list ul {
+        height: 10vh;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+
+    .nav-list li {
+        opacity: 1;
+        padding-bottom: .5rem;
+    }
+
+    .nav-list a {
+        font-size: 1.25rem;
+        padding: 0 0rem;
+        
+    }
+
+    .menu-btn {
+        display: none;
+    }
+    
+
+    /* Landing Page - Desktop */
+
+    .home-landing {
+        margin-top: -12vh;
+        height: 100vh;
+    }
+    .landing-page {
+        background-position: top;
+        background-size: cover;
+    }
+
+    .home-landing h2 {
+        font-size: 2.5rem;
+    }
+
+    .home-landing p {
+        font-size: 1.5rem;
+        padding: 0 2rem 4rem 2rem;
+    }
+
+    
+
+    /* Misc Guides - Desktop */
+
+    .lg {
+        width: 30%;
+    }
+
+    .lg p {
+        font-size: 1rem;
+    }
+
+    /* Help Secton - Tablet */
+    .sect-help {
+        padding: 2rem 20rem;
+        min-height: 70vh;
+    }
+
+    .sect-help p {
+        font-size: 1.25rem;
+    }
+
+    .contact {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* About Me - Desktop */
+
+    .about-me-container {
+        display: flex;
+    }
+
+    .about-me-img {
+        width: 50%;
+    }
+
+    .about-me-bio {
+        width: 40%;
+        margin-right: 10vw;
+    }
+
+    .about-me-container p {
+        margin: 1.5rem 0rem;
+        padding: 0 2rem;
+    }
+
+    .about-me-img img {
+        width: 60%;
+    }
+
+    /* Local's Guide - Desktop */
+    .lg-options {
+        flex-direction: row;
+    }
+
+    .lg-option {
+        min-height: 88vh;
+        min-width: 24vw;
+        margin: 1vh 0;
+    }
+
+    .lg-option a {
+        color: #fcfcfc;
+        width: 24vw;
+        height: 88vh;
+        font-size: 3rem;
+
+    }
+
+    /* Footer - Desktop */
+    footer {
+        justify-content: space-evenly;
+    }
+
+   .footer-menu {
+       width: 10%;
+   }
+
+
+    
+}
