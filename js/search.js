@@ -11,6 +11,12 @@ function search() {
         e.preventDefault();
         searchMore.classList.toggle('search-more-active');
 
+        if(searchMore.classList.contains('search-more-active')){
+            moreBtn.textContent = 'x';
+        } else {
+            moreBtn.textContent = '...';
+        }
+
         searchMoreLinks.forEach((link, index) => {
             if(link.style.animation) {
              link.style.animation = '';
@@ -22,19 +28,18 @@ function search() {
 
     searchBtn.addEventListener('click', e => {
         e.preventDefault();
+        let search = searchInput.value.toLowerCase();
 
-
-
+        for(let i = 0; i < localsGuide.length; i++){
+            if(localsGuide[i].innerHTML.toLowerCase().includes(search) || localsGuide[i].classList.contains(search)){
+                localsGuide[i].style.display = 'block';
+            } else {
+                localsGuide[i].style.display = 'none';
+            }
+        }
+       
         searchInput.value = '';
     })
-
-    
-
-
-
-
-
-
 
 
 
