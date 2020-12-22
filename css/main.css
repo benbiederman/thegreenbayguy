@@ -25,7 +25,7 @@ p {
 @media only screen and (min-width: 100px) {
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     h2 {
         font-size: 2rem;
@@ -58,6 +58,7 @@ p {
         color: #fcfcfc;
         font-size: 1.5rem;
         text-transform: uppercase;
+        outline: none;
     }
 
     .btn-black:hover {
@@ -453,19 +454,6 @@ p {
         outline: none;
     }
 
-    .delete-btn {
-        background-color: #b60000;
-        color: #fcfcfc;
-        width: 10%;
-        padding: .5rem;
-        font-size: 1rem;
-        border: none;
-        cursor: pointer;
-        transition: all 0.5s ease;
-        outline: none;
-        display: none;
-    }
-
     .search-btn:hover, .more-btn:hover {
         background-color: #000000;
     }
@@ -506,6 +494,112 @@ p {
         color: #18A360
     }
 
+    /* Blog Post Section - Mobile */
+
+    .blog-post-section {
+        min-height: 88vh;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .blog-post-section img {
+        object-fit: cover;
+        width: 95%;
+        padding-bottom: 1.25rem;
+    }
+
+    .blog-post-section h1 {
+        padding-bottom: 1rem;
+    }
+
+    .blog-post-section p {
+        padding: 0 .5rem;
+        text-align: left;
+        margin-bottom: 1.5rem;
+    }
+
+    .blog-post-section p a {
+        font-weight: 500;
+        color: #111;
+    }
+
+    .blog-post-section p a:hover {
+        color: #18A360;
+        text-decoration: underline;
+    }
+
+    .popup {
+        height: 100vh;
+        width: 100vw;
+        background-color: #fcfcfcc2;
+        position: absolute;
+        display: none;
+        z-index: 10;
+        top: 0;
+        left: 0;
+    }
+
+    .lg-popup {
+        background-color: #111;
+        position: absolute;
+        display: none;
+        top: 14vh;
+        width: 95%;
+        left: 2.5%;
+        min-height: 60vh;
+        z-index: 2;
+        box-shadow: 2px 2px 10px #000000;
+        border: 2px solid #fcfcfc;
+        text-align: center;
+        opacity: 0;
+    }
+
+    @keyframes popupFade {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+    }
+
+    .lg-popup h2, .lg-popup p {
+        color: #fcfcfc;
+        text-align: center;
+        margin: 0;
+        
+    }
+
+    .lg-hours {
+        margin: 1.5rem 0;
+    }
+
+    .lg-contact a {
+        color: #fcfcfc;
+        transition: all 0.5s ease;
+    } 
+
+    .lg-contact a:hover {
+        color: #18A360;
+    } 
+
+    .open {
+        margin-top: 2rem;
+        outline: none;
+    }
+
+    .close {
+        margin: 1.5rem 0 1.5rem 0;
+        outline: none;
+    }
+
+    .lg-more {
+        text-align: center;
+    }
 
     /* Footer - Mobile */
     footer {
@@ -540,11 +634,11 @@ p {
 @media only screen and (min-width: 768px) {
 
     h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     h2 {
-        font-size: 3rem;
+        font-size: 2.75rem;
     }
 
     h3 {
@@ -661,6 +755,17 @@ p {
 
     }
 
+    /* Blog Post Section - Tablet */
+
+    .blog-post-section img {
+        width: 70%;
+    }
+
+
+    .blog-post-section p {
+        padding: 0 5rem;
+    }
+
     /* Footer - Tablet */
     footer {
         min-height: 30vh;
@@ -714,11 +819,6 @@ p {
 
     
 
-
-
-
-
-
     
 }
 
@@ -727,7 +827,7 @@ p {
 @media only screen and (min-width: 1025px) {
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.75rem;
     }
 
     h2 {
@@ -743,7 +843,7 @@ p {
     }
 
     p {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     /* Buttons - Desktop */
@@ -934,6 +1034,50 @@ p {
         width: 50%;
 
     }
+
+    /* Blog Post Section - Mobile */
+
+    .blog-post-section {
+        width: 70%;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+
+    .blog-post-section img {
+        width: 60%;
+    }
+
+    .blog-post-section h1 {
+        font-size: 2.25rem;
+    }
+
+    .blog-post-section h2 {
+        font-size: 1.75rem;
+        padding-bottom: .5rem;
+    }
+
+    .lg-popup {
+        width: 50%;
+        left: 25%;
+        min-height: 60vh;
+    }
+
+
+    .lg-popup h2, .lg-popup p {
+        color: #fcfcfc;
+        text-align: center;
+        margin: 0;
+        
+    }
+
+    .open {
+        margin-top: 1.5rem;
+    }
+
+    .close {
+        margin: 1.5rem 0 1.5rem 0;
+    }
+
 
 
     /* Footer - Desktop */
