@@ -3,6 +3,7 @@ const popup = document.querySelector('.lg-popup');
 const close = document.querySelector('.close');
 const popupBackground = document.querySelector('.popup');
 
+
 moreInfoBtn.addEventListener('click', e => {
     e.preventDefault();
     popup.style.display = 'block';
