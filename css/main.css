@@ -510,6 +510,12 @@ p {
 
     .blog-post-section h1 {
         padding-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .blog-post-section h2 {
+        padding-bottom: 1rem;
+        font-size: 1.75rem;
     }
 
     .blog-post-section p {
