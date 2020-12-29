@@ -374,6 +374,16 @@ p {
         display: flex;
     }
 
+    .about-me-bio p a {
+        font-weight: 500;
+        color: #111;
+    }
+
+    .about-me-bio p a:hover {
+        color: #18A360;
+        text-decoration: underline;
+    }
+
     /* Local's Guide - Mobile */
     .lg-options {
         min-height: 88vh;
