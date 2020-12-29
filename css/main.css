@@ -80,6 +80,7 @@ p {
         font-size: 1.5rem;
         text-transform: uppercase;
         margin: 1rem 0;
+        outline: none;
     }
 
     .btn-primary:hover {
@@ -1041,7 +1042,7 @@ p {
 
     }
 
-    /* Blog Post Section - Mobile */
+    /* Blog Post Section - Desktop */
 
     .blog-post-section {
         width: 70%;
@@ -1094,6 +1095,10 @@ p {
    .footer-menu {
        width: 10%;
    }
+
+   footer .socials img {
+    width: 3rem;
+}
 
 
     
