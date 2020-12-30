@@ -505,6 +505,12 @@ p {
         color: #18A360
     }
 
+    .disclaimer {
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 2rem;
+    }
+
     /* Blog Post Section - Mobile */
 
     .blog-post-section {
@@ -569,6 +575,8 @@ p {
         border: 2px solid #fcfcfc;
         text-align: center;
         opacity: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 
     @keyframes popupFade {
@@ -769,7 +777,10 @@ p {
 
     .search-more {
         width: 70%;
+    }
 
+    .disclaimer {
+        width: 70%;
     }
 
     /* Blog Post Section - Tablet */
@@ -1049,7 +1060,10 @@ p {
 
     .search-more {
         width: 50%;
+    }
 
+    .disclaimer {
+        width: 60%;
     }
 
     /* Blog Post Section - Desktop */

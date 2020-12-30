@@ -6,7 +6,7 @@ const popupBackground = document.querySelector('.popup');
 
 moreInfoBtn.addEventListener('click', e => {
     e.preventDefault();
-    popup.style.display = 'block';
+    popup.style.display = 'flex';
     popup.style.position = 'sticky';
     popupBackground.style.display = 'block';
     popupBackground.style.position = 'sticky';
