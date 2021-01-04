@@ -535,6 +535,10 @@ p {
         font-size: 1.75rem;
     }
 
+    .blog-post-section h3 {
+        font-weight: 300;
+    }
+
     .blog-post-section p {
         padding: 0 .5rem;
         text-align: left;
@@ -549,6 +553,12 @@ p {
     .blog-post-section p a:hover {
         color: #18A360;
         text-decoration: underline;
+    }
+
+    .blog-post-section audio {
+        outline: none;
+        width: 90%;
+        margin-top: 2rem;
     }
 
     .popup {
@@ -784,8 +794,15 @@ p {
     }
 
     /* Blog Post Section - Tablet */
+    .blog-post-section {
+        min-height: 60vh;
+    }
 
     .blog-post-section img {
+        width: 70%;
+    }
+
+    .blog-post-section audio {
         width: 70%;
     }
 
@@ -1085,6 +1102,10 @@ p {
     .blog-post-section h2 {
         font-size: 1.75rem;
         padding-bottom: .5rem;
+    }
+
+    .blog-post-section audio {
+        width: 50%;
     }
 
     .lg-popup {
