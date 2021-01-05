@@ -545,6 +545,29 @@ p {
         margin-bottom: 1.5rem;
     }
 
+    .recipe-section ul {
+       list-style: none;
+       width: 85%;
+       margin: 0 auto;
+    }
+
+    .recipe-section li {
+        font-size: 1.25rem;
+        font-family: "Roboto", "Helvetica", sans-serif;
+        text-align: left;
+        padding: .25rem 0;
+     }
+
+    .recipe-section h2 {
+        padding: 0;
+        margin-top: .5rem;
+     }    
+
+     .recipe-section h5 {
+        font-size: 1.5rem;
+        margin-top: .5rem;
+     }
+
     .blog-post-section p a {
         font-weight: 500;
         color: #111;
@@ -810,6 +833,14 @@ p {
     .blog-post-section p {
         padding: 0 5rem;
     }
+
+    .recipe-section ul {
+        width: 55%;
+     }
+ 
+     .recipe-section li {
+         font-size: 1.25rem;
+      }
 
     /* Footer - Tablet */
     footer {
@@ -1107,6 +1138,14 @@ p {
     .blog-post-section audio {
         width: 50%;
     }
+
+    .recipe-section ul {
+        width: 60%;
+     }
+ 
+     .recipe-section li {
+         font-size: 1.25rem;
+      }
 
     .lg-popup {
         width: 50%;
