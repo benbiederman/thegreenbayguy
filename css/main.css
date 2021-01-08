@@ -70,7 +70,6 @@ p {
     .btn-primary {
         min-width: 60vw;
         background-color: #18A360;
-        margin: 0 auto;
         min-height: 6vh;
         border-radius: 10px;
         border: 1px solid #18A360;
@@ -84,6 +83,32 @@ p {
     }
 
     .btn-primary:hover {
+        background-color: #00480F;
+        transform: scale(1.03);
+    }
+
+    .contact-btn {
+        width: 60vw;
+        background-color: #18A360;
+        border-radius: 10px;
+        border: 1px solid #18A360;
+        transition: all 0.5s ease;
+        text-transform: uppercase;
+        margin: 1rem auto;
+        outline: none;
+    }
+
+    .contact-btn a {
+        display: block;
+    }
+
+    .contact-btn h6 {
+        font-weight: 400;
+        font-size: 1.75rem;
+        padding: .2rem 0;
+    }
+
+    .contact-btn:hover {
         background-color: #00480F;
         transform: scale(1.03);
     }
@@ -461,13 +486,35 @@ p {
         font-size: 1rem;
         border: 1px solid #2c2c2c;
         cursor: pointer;
-        transition: all 0.5s ease;
+        transition: all 0.2s ease;
         outline: none;
+    }
+
+    .x-btn {
+        background-color: transparent;
+        color: #111;
+        width: 10%;
+        padding: .5rem;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 700;
+        outline: none;
+        display: none;
+    }
+
+    .x-btn:hover{
+        color: #c9180b;
     }
 
     .search-btn:hover, .more-btn:hover {
         background-color: #000000;
     }
+
+    .search-input-error::-webkit-input-placeholder {
+        color: #c9180b
+     }
 
     .search-more {
         width: 95%;
@@ -491,18 +538,36 @@ p {
         list-style: none;
     }
 
-    .search-more a {
+    .search-more a, .search-more li {
         color: #fcfcfc;
         font-family: "Oswald", "Helvetica", sans-serif;
         font-size: 1.75rem;
         text-decoration: none;
         text-transform: uppercase;
-        padding: 0 2rem;
+        padding: 0 1rem;
         transition: all 0.5s ease;
     }
 
-    .search-more a:hover {
+    .search-more a:hover, .search-more li:hover {
         color: #18A360
+    }
+
+
+    .error-message {
+        width: 90%;
+        min-height: 72vh;
+        display: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .error-message h5{
+        font-size: 8rem;
+    }
+
+    .error-message p{
+        font-size: 1.75rem;
+        padding-bottom: 2rem;
     }
 
     .disclaimer {
@@ -547,8 +612,13 @@ p {
 
     .recipe-section ul {
        list-style: none;
-       width: 85%;
+       width: 95%;
        margin: 0 auto;
+    }
+
+    .recipe-ingredients ul {
+        width: 65%;
+        margin: 0 auto;
     }
 
     .recipe-section li {
@@ -558,9 +628,14 @@ p {
         padding: .25rem 0;
      }
 
+     .recipe-ingredients li {
+         text-align: center;
+     }
+
     .recipe-section h2 {
         padding: 0;
         margin-top: .5rem;
+        text-decoration: underline;
      }    
 
      .recipe-section h5 {
@@ -723,6 +798,14 @@ p {
         font-size: 1.5rem;
     }
 
+    .contact-btn {
+        width: 40vw;
+    }
+
+    .contact-btn h6 {
+        font-size: 1.5rem;
+    }
+
     /* Sections - Tablet */
     .section {
         min-height: 70vh;
@@ -804,11 +887,15 @@ p {
         width: 70%;  
     }
 
-    .search-btn, .more-btn, .delete-btn   {
+    .search-btn, .more-btn, .delete-btn, .x-btn   {
         width: 8%;
     }
 
     .search-more {
+        width: 70%;
+    }
+
+    .error-message {
         width: 70%;
     }
 
@@ -835,8 +922,12 @@ p {
     }
 
     .recipe-section ul {
-        width: 55%;
+        width: 85%;
      }
+
+     .recipe-ingredients ul {
+        width: 55%;
+    }
  
      .recipe-section li {
          font-size: 1.25rem;
@@ -937,6 +1028,15 @@ p {
     .btn-small {
         min-width: 15vw;
         margin: 0 1rem;
+    }
+
+    .contact-btn {
+        width: 20vw;
+        margin: 2rem 2rem;
+    }
+
+    .contact-btn h6 {
+        font-size: 1.25rem;
     }
 
     /* Line - Desktop */
@@ -1102,12 +1202,24 @@ p {
         width: 50%;  
     }
 
-    .search-btn, .more-btn, .delete-btn   {
+    .search-btn, .more-btn, .x-btn   {
         width: 6%;
     }
 
     .search-more {
         width: 50%;
+    }
+
+    .error-message {
+        width: 60%;
+    }
+
+    .error-message h5{
+        font-size: 6rem;
+    }
+
+    .error-message p{
+        font-size: 1.25rem;
     }
 
     .disclaimer {
@@ -1140,17 +1252,26 @@ p {
     }
 
     .recipe-section ul {
-        width: 60%;
+        width: 70%;
      }
+
+     .recipe-ingredients ul {
+        width: 45%;
+    }
  
      .recipe-section li {
-         font-size: 1.25rem;
+         font-size: 1.0rem;
+         font-weight: 300;
       }
 
     .lg-popup {
         width: 50%;
         left: 25%;
         min-height: 60vh;
+    }
+
+    .lg-more h2 {
+        font-size: 2rem;
     }
 
 

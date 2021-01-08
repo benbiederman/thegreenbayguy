@@ -1,12 +1,74 @@
+const searchInput = document.querySelector('.search-input');
+const searchBtn = document.querySelector('.search-btn');
+const xBtn = document.querySelector('.x-btn');
+const localsGuide = document.querySelectorAll('.lg');
+const errorMessage = document.querySelector('.error-message');
+const disclaimer = document.querySelector('.disclaimer');
+const moreBtn = document.querySelector('.more-btn');
+const searchMore = document.querySelector('.search-more');
+const searchMoreLinks = document.querySelectorAll('.search-more li');
+
+search();
+moreOptions();
+
 function search() {
-    const searchInput = document.querySelector('.search-input');
-    const searchBtn = document.querySelector('.search-btn');
-    const localsGuide = document.querySelectorAll('.lg');
-    const moreBtn = document.querySelector('.more-btn');
-    const searchMore = document.querySelector('.search-more');
-    const searchMoreLinks = document.querySelectorAll('.search-more li');
+    let searchResults = 0;
+    errorMessage.style.display = 'none';
+    disclaimer.style.display = 'block';
 
+    //Input value
+    searchInput.addEventListener('input', (e) => {
+        if(searchInput.value === ''){
+            xBtn.style.display = 'none';
+        } else {
+            xBtn.style.display = 'block'
+        }
+    })
 
+    //X Button
+    xBtn.addEventListener('click', (e) => {
+        searchInput.value = '';
+        xBtn.style.display = 'none';
+        errorMessage.style.display = 'none';
+        disclaimer.style.display = 'block';
+
+        for(let i = 0; i < localsGuide.length; i++){
+            localsGuide[i].style.display = 'block';
+        }
+    })
+
+    //Search
+    searchBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+    
+        search = searchInput.value.toLowerCase();
+
+        //Check if input, if input run search
+        if(search === '' ){
+            searchInput.classList.add('search-input-error');
+        } else {
+            searchInput.classList.remove('search-input-error');
+            for(let i = 0; i < localsGuide.length; i++){
+                if(localsGuide[i].innerHTML.toLowerCase().includes(search) || localsGuide[i].classList.contains(search)){
+                    localsGuide[i].style.display = 'block';
+                    searchResults++;
+                } else {
+                    localsGuide[i].style.display = 'none';
+                }
+            }
+
+            //Checks amount of search results
+            if(searchResults === 0){
+                errorMessage.style.display = 'block';
+                disclaimer.style.display = 'none';
+            }
+        }
+
+    })
+
+}
+
+function moreOptions() {
     moreBtn.addEventListener('click', e => {
         e.preventDefault();
         searchMore.classList.toggle('search-more-active');
@@ -25,25 +87,6 @@ function search() {
             }
            });
     })
-
-    searchBtn.addEventListener('click', e => {
-        e.preventDefault();
-        let search = searchInput.value.toLowerCase();
-
-        for(let i = 0; i < localsGuide.length; i++){
-            if(localsGuide[i].innerHTML.toLowerCase().includes(search) || localsGuide[i].classList.contains(search)){
-                localsGuide[i].style.display = 'block';
-            } else {
-                localsGuide[i].style.display = 'none';
-            }
-        }
-       
-        searchInput.value = '';
-    })
-
-
-
 }
 
-search();
 
