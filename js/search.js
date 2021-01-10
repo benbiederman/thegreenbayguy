@@ -12,11 +12,10 @@ search();
 moreOptions();
 
 function search() {
-    let searchResults = 0;
     errorMessage.style.display = 'none';
     disclaimer.style.display = 'block';
 
-    //Input value
+    //Input value changing adds or removes X btn
     searchInput.addEventListener('input', (e) => {
         if(searchInput.value === ''){
             xBtn.style.display = 'none';
@@ -37,9 +36,10 @@ function search() {
         }
     })
 
-    //Search
+    //Searches through divs on click of search btn
     searchBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        let searchResults = 0;
     
         search = searchInput.value.toLowerCase();
 
@@ -57,15 +57,16 @@ function search() {
                 }
             }
 
-            //Checks amount of search results
+            //If no search results, show error message
             if(searchResults === 0){
                 errorMessage.style.display = 'block';
                 disclaimer.style.display = 'none';
+            } else {
+                errorMessage.style.display = 'none';
+                disclaimer.style.display = 'block';
             }
         }
-
     })
-
 }
 
 function moreOptions() {

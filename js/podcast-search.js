@@ -11,9 +11,9 @@ search();
 moreOptions();
 
 function search() {
-    let searchResults = 0;
+    errorMessage.style.display = 'none';
 
-    //Input value
+    //Input value changing adds or removes X btn
     searchInput.addEventListener('input', (e) => {
         if(searchInput.value === ''){
             xBtn.style.display = 'none';
@@ -27,14 +27,16 @@ function search() {
         searchInput.value = '';
         xBtn.style.display = 'none';
         errorMessage.style.display = 'none';
+        
 
         for(let i = 0; i < localsGuide.length; i++){
             localsGuide[i].style.display = 'block';
         }
     })
 
-    //Search
+    //Searches through divs on click of search btn
     searchBtn.addEventListener('click', (e) => {
+        let searchResults = 0;
         e.preventDefault();
     
         search = searchInput.value.toLowerCase();
@@ -53,36 +55,88 @@ function search() {
                 }
             }
 
-            if(searchResults === 0){
+            //If no search results, show error message
+            if(searchResults == 0){
                 errorMessage.style.display = 'block';
             } else {
                 errorMessage.style.display = 'none';
             }
         }
-
     })
-
 }
 
-function moreOptions() {
-    moreBtn.addEventListener('click', e => {
+
+function moreOptions(){
+
+
+    moreBtn.addEventListener('click', (e) =>{
         e.preventDefault();
-        searchMore.classList.toggle('search-more-active');
+        searchMore.classList.toggle('search-more-active')
 
         if(searchMore.classList.contains('search-more-active')){
-            moreBtn.textContent = 'x';
+            moreBtn.textContent = 'X';
+            searchMoreLinks.forEach((link, index) => {
+            //Search link animation
+             link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + .25}s`;
+
+             link.addEventListener('click', (e) => {
+                 switch(e.target.innerHTML){
+                     case '1-10':
+                         hide(localsGuide);
+                         show(localsGuide, 0, 10);
+                         searchMore.classList.remove('search-more-active')
+                         break;
+                    case '11-20':
+                         hide(localsGuide);
+                         show(localsGuide, 10, 20);
+                         searchMore.classList.remove('search-more-active')
+                         break;
+                    case '21-30':
+                        hide(localsGuide);
+                        show(localsGuide, 20, 30);
+                        searchMore.classList.remove('search-more-active')
+                        break;
+                    case '31-40':
+                        hide(localsGuide);
+                        show(localsGuide, 30, 40);
+                        searchMore.classList.remove('search-more-active')
+                        break;
+                    case '41-50':
+                        hide(localsGuide);
+                        show(localsGuide, 40, 50);
+                        searchMore.classList.remove('search-more-active')
+                        break;
+                    case 'All':
+                        show(localsGuide, 0, 50);
+                        searchMore.classList.remove('search-more-active')
+                        break;
+                 }
+             })
+           });
         } else {
             moreBtn.textContent = '...';
         }
 
-        searchMoreLinks.forEach((link, index) => {
-            if(link.style.animation) {
-             link.style.animation = '';
-            }else {
-             link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + .25}s`;
-            }
-           });
     })
+
 }
 
 
+function hide(hideItem) {
+    errorMessage.style.display = 'none';
+    searchInput.value = '';
+    xBtn.style.display = 'none';
+
+    for(let i = 0; i < hideItem.length; i++){
+        hideItem[i].style.display = 'none';
+        
+    }
+}
+
+function show(showItem, y, x) {
+    for(let i = y; i < x; i++){
+        showItem[i].style.display = 'block';
+    }
+
+    moreBtn.textContent = '...'
+}

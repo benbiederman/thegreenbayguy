@@ -11,7 +11,6 @@ search();
 moreOptions();
 
 function search() {
-    let searchResults = 0;
 
     //Input value
     searchInput.addEventListener('input', (e) => {
@@ -36,6 +35,7 @@ function search() {
     //Search
     searchBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        let searchResults = 0;
     
         search = searchInput.value.toLowerCase();
 
@@ -53,15 +53,14 @@ function search() {
                 }
             }
 
+            //If no search results, show error message
             if(searchResults === 0){
                 errorMessage.style.display = 'block';
             } else {
                 errorMessage.style.display = 'none';
             }
         }
-
     })
-
 }
 
 function moreOptions() {
